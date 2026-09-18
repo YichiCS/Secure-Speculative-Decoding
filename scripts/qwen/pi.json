@@ -1,0 +1,3100 @@
+{
+  "common": {
+    "target_model": "Qwen/Qwen3-8B",
+    "draft_model": "Qwen/Qwen3-0.6B",
+    "kvcache_block_size": 256,
+    "max_num_seqs": 32,
+    "max_model_len": 16384,
+    "decode_tps_n": 512,
+    "num_gpus": 1,
+    "speculate_k": 5,
+    "num_seqs": 200,
+    "prompt_offset": 0,
+    "utility_timeout": 3.0,
+    "utility_workers": 16,
+    "temp": 0.0,
+    "dtemp": 0.0,
+    "output_len": 512,
+    "think": 0,
+    "no_utility_eval": false,
+    "pi_file": "pi_qwen_200.json",
+    "pi_judge_model": "meta-llama/Llama-3.2-3B-Instruct",
+    "pi_judge_batch_size": 32
+  },
+  "eta_configs": [
+    "step:0:1:1",
+    "step:0:1:2",
+    "step:0:1:3",
+    "step:0:1:5",
+    "step:0:1:9"
+  ],
+  "methods": [
+    "ar_target",
+    "ar_draft",
+    "sd",
+    "lossy_sd",
+    "fsd",
+    "mars",
+    "bild",
+    "sc",
+    "fly"
+  ],
+  "grids": {
+    "lossy_sd": [
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.01
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.03
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.05
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.08
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.11
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.14
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.18
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.2
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.23
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.26
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.3
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.31
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.33
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.35
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.38
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.4
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.44
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.45
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.49
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.5
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.52
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.53
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.55
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.58
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.59
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.62
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.63
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.66
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.69
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.71
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.72
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.73
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.75
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.77
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.78
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.8
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.82
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.83
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.84
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.85
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.87
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.88
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.89
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.91
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.92
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.93
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.95
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.96
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.97
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.98
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.99
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            1.0
+          ]
+        }
+      }
+    ],
+    "fsd": [
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.53
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.96
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.55
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.24
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            1.1
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.26
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.26999999999999996
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.27499999999999997
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.27999999999999997
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            1.3
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.295
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            1.4
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.31
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.6749999999999999
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.325
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.33499999999999996
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.7
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.345
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.715
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.36
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.365
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.375
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            2.0
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.385
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            2.1
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.395
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.78
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.41000000000000003
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.41500000000000004
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.42999999999999994
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.43499999999999994
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.43999999999999995
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            2.6
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.45999999999999996
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.835
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            2.9
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            3.0
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.86
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            3.2
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            3.3
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            3.4
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.53
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            3.7
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.9099999999999999
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.9199999999999999
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.57
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "tv_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.935
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.6
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.62
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            6.5
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "kl_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            11.0
+          ]
+        }
+      },
+      {
+        "fsd_div_type": {
+          "values": [
+            "js_div"
+          ]
+        },
+        "fsd_threshold": {
+          "values": [
+            0.85
+          ]
+        }
+      }
+    ],
+    "bild": [
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            1.0
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            2.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.8400000000000001
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.8
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            6.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.76
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.72
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.68
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.64
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            4.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.56
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.64
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.6000000000000001
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            2.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.52
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.6000000000000001
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            6.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.6000000000000001
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.52
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            2.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.48000000000000004
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            4.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.52
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            6.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.48000000000000004
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.4
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            2.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.32
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.28
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.28
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            2.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.4
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            4.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.2
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.0
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            2.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.16
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.12000000000000002
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.4
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.32
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            4.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.4
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            20.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.4
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            16.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.28
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            4.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.36
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.2
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            4.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.32
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            6.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.36
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            12.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.36
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            18.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.28
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            6.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.32
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            10.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.32
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            12.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.2
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            6.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.16
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            6.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.12000000000000002
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            6.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.28
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            20.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.2
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.24000000000000005
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            10.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.24000000000000005
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            12.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.24000000000000005
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            18.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.16
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            8.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.2
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            12.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.2
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            14.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.2
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            20.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.16
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            10.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.12000000000000002
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            10.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.04
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            10.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.12000000000000002
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            12.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.04
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            12.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.04
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            14.0
+          ]
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.0
+          ]
+        },
+        "bild_rollback_threshold": {
+          "values": [
+            18.0
+          ]
+        }
+      }
+    ],
+    "mars": [
+      {
+        "mars_theta": {
+          "values": [
+            1.0
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.995
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.99
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.985
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.98
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.975
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.965
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.96
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.95
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.9400000000000001
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.93
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.925
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.905
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.88
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.8
+          ]
+        }
+      },
+      {
+        "mars_theta": {
+          "values": [
+            0.35000000000000003
+          ]
+        }
+      }
+    ],
+    "sc": [
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.075
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.17500000000000002
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.22499999999999998
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.25
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.27499999999999997
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.31
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.34
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.38
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.01
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.04
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.04
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.445
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.07
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.11999999999999998
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.1
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.49
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.51
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.53
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.15
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.545
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.28
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.5700000000000001
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.3
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.5900000000000001
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.225
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.35
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.245
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.6300000000000001
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.635
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.38999999999999996
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.29000000000000004
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.66
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.31500000000000006
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.68
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.335
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.51
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.35
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.5399999999999999
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.38
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.7350000000000001
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.6
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.75
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.44
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.7650000000000001
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.47
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.49
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.8
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.81
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.8200000000000001
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.825
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "chow"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.86
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.6749999999999999
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "diff"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            0.7999999999999999
+          ]
+        }
+      },
+      {
+        "sc_rule": {
+          "values": [
+            "opt"
+          ]
+        },
+        "sc_alpha": {
+          "values": [
+            1.3
+          ]
+        }
+      }
+    ],
+    "fly": [
+      {
+        "fly_window_size": {
+          "values": [
+            2
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.095
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            2
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.09000000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.1
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            2
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.075
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            2
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.065
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            2
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.06
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.084
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.07800000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.07600000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            2
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.02
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.066
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.062
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            2
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.002
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.086
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.05
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.046000000000000006
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.07800000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.07600000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.07400000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.07200000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.014000000000000002
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.012000000000000002
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.064
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.062
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.06
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            1
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.05800000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.05600000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.054000000000000006
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.052000000000000005
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.05
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.04800000000000001
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.044000000000000004
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.04
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.038000000000000006
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.036000000000000004
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.032
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.03
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.026000000000000002
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.024000000000000004
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.02
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.016
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.014000000000000002
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.012000000000000002
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.008
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.004
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.002
+          ]
+        }
+      },
+      {
+        "fly_window_size": {
+          "values": [
+            0
+          ]
+        },
+        "fly_entropy_threshold": {
+          "values": [
+            0.0
+          ]
+        }
+      }
+    ]
+  }
+}
