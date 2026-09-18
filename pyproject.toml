@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "securesd"
+version = "0.2.0"
+authors = [{ name = "Yichi Zhang" }]
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+description = "LLM inference engine with autoregressive and standard speculative decoding"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "torch==2.8.0",
+    "triton==3.4.0",
+    "transformers==4.57.1",
+    "xxhash==3.5.0",
+    "numpy==2.3.3",
+    "safetensors==0.6.2",
+    "tqdm==4.67.1",
+    "flashinfer-python==0.5.2",
+    "flash-attn==2.8.3",
+    "nvidia-cutlass-dsl==4.2.1",
+    "hf_transfer",
+    "tiktoken",
+]
+
+[project.optional-dependencies]
+scripts = [
+    "datasets",
+    "huggingface_hub",
+    "human-eval",
+]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/anonymous/SecureSD"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["securesd*"]
+
+[tool.uv.extra-build-dependencies]
+flash-attn = ["torch==2.8.0"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+ignore = ["E741"]
+
+[tool.ruff.lint.per-file-ignores]
+"securesd/constants.py" = ["F401"]
+"securesd/verifier/__init__.py" = ["F401"]
+"bench/*.py" = ["E402"]
+"scripts/*.py" = ["E402"]

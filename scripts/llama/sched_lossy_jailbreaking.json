@@ -1,0 +1,398 @@
+{
+  "common": {
+    "target_model": "meta-llama/Llama-3.1-8B-Instruct",
+    "draft_model": "meta-llama/Llama-3.2-1B-Instruct",
+    "kvcache_block_size": 256,
+    "max_num_seqs": 32,
+    "max_model_len": 16384,
+    "decode_tps_n": 512,
+    "num_gpus": 1,
+    "speculate_k": 5,
+    "num_seqs": 200,
+    "jb_file": "jb_llama_instruct_200.json",
+    "wildguard_batch_size": 32,
+    "prompt_offset": 0,
+    "utility_timeout": 3.0,
+    "utility_workers": 16,
+    "temp": 0.0,
+    "dtemp": 0.0,
+    "output_len": 512,
+    "think": 0,
+    "no_utility_eval": false
+  },
+  "eta_configs": [
+    "linear:0:1:2",
+    "linear:0:1:9",
+    "power:0:1:2:2",
+    "power:0:1:2:4",
+    "power:0:1:9:2",
+    "power:0:1:9:4"
+  ],
+  "methods": [
+    "ar_target",
+    "ar_draft",
+    "sd",
+    "lossy_sd"
+  ],
+  "grids": {
+    "lossy_sd": [
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.02
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.04
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.06
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.08
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.1
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.12
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.14
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.16
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.18
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.2
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.22
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.24
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.26
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.28
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.3
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.32
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.34
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.36
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.38
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.4
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.42
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.44
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.46
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.48
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.5
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.52
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.54
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.56
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.58
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.6
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.62
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.64
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.66
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.68
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.7
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.72
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.74
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.76
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.78
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.8
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.82
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.84
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.86
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.88
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.9
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.92
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.94
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.96
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            0.98
+          ]
+        }
+      },
+      {
+        "lossy_epsilon": {
+          "values": [
+            1.0
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,396 @@
+{
+  "common": {
+    "target_model": "meta-llama/Llama-3.1-8B-Instruct",
+    "draft_model": "meta-llama/Llama-3.2-1B-Instruct",
+    "kvcache_block_size": 256,
+    "max_num_seqs": 32,
+    "max_model_len": 16384,
+    "decode_tps_n": 512,
+    "num_gpus": 1,
+    "speculate_k": 5,
+    "num_seqs": 200,
+    "jb_file": "jb_llama_instruct_200.json",
+    "wildguard_batch_size": 32,
+    "prompt_offset": 0,
+    "utility_timeout": 3.0,
+    "utility_workers": 16,
+    "temp": 0.0,
+    "dtemp": 0.0,
+    "output_len": 512,
+    "think": 0,
+    "no_utility_eval": false
+  },
+  "eta_configs": [
+    "step:0:1:1",
+    "step:0:1:2",
+    "step:0:1:3",
+    "step:0:1:5",
+    "step:0:1:9"
+  ],
+  "methods": [
+    "ar_target",
+    "ar_draft",
+    "sd",
+    "lossy_sd",
+    "fsd",
+    "mars",
+    "bild",
+    "sc",
+    "fly"
+  ],
+  "grids": {
+    "lossy_sd": {
+      "lossy_epsilon": [
+        {
+          "min": 0.0,
+          "max": 1.0,
+          "num": 101
+        }
+      ]
+    },
+    "fsd": {
+      "by": "fsd_div_type",
+      "cases": {
+        "js_div": {
+          "fsd_threshold": [
+            {
+              "min": 0.01,
+              "max": 0.2,
+              "num": 39
+            },
+            {
+              "min": 0.2,
+              "max": 0.4,
+              "num": 21
+            },
+            {
+              "min": 0.4,
+              "max": 0.8,
+              "num": 17
+            },
+            {
+              "min": 0.8,
+              "max": 1.0,
+              "num": 5
+            }
+          ]
+        },
+        "kl_div": {
+          "fsd_threshold": [
+            {
+              "min": 0.035,
+              "max": 0.1,
+              "num": 14
+            },
+            {
+              "min": 0.1,
+              "max": 0.2,
+              "num": 11
+            },
+            {
+              "min": 0.2,
+              "max": 0.3,
+              "num": 6
+            },
+            {
+              "min": 0.3,
+              "max": 0.6,
+              "num": 13
+            },
+            {
+              "min": 0.6,
+              "max": 0.7,
+              "num": 3
+            },
+            {
+              "min": 0.7,
+              "max": 0.9,
+              "num": 9
+            },
+            {
+              "min": 0.9,
+              "max": 1.0,
+              "num": 3
+            },
+            {
+              "min": 1.0,
+              "max": 1.5,
+              "num": 6
+            },
+            {
+              "min": 1.5,
+              "max": 2.5,
+              "num": 11
+            },
+            {
+              "min": 2.5,
+              "max": 4.0,
+              "num": 7
+            },
+            {
+              "min": 4.0,
+              "max": 7.0,
+              "num": 7
+            },
+            {
+              "min": 7.0,
+              "max": 12.0,
+              "num": 6
+            }
+          ]
+        },
+        "tv_div": {
+          "fsd_threshold": [
+            {
+              "min": 0.035,
+              "max": 0.1,
+              "num": 14
+            },
+            {
+              "min": 0.1,
+              "max": 0.5,
+              "num": 41
+            },
+            {
+              "min": 0.5,
+              "max": 0.6,
+              "num": 6
+            },
+            {
+              "min": 0.6,
+              "max": 0.7,
+              "num": 5
+            },
+            {
+              "min": 0.7,
+              "max": 0.8,
+              "num": 6
+            },
+            {
+              "min": 0.8,
+              "max": 0.9,
+              "num": 5
+            },
+            {
+              "min": 0.9,
+              "max": 1.0,
+              "num": 11
+            }
+          ]
+        }
+      }
+    },
+    "bild": [
+      {
+        "bild_fallback_threshold": {
+          "min": 0.0,
+          "max": 0.2,
+          "num": 6
+        },
+        "bild_rollback_threshold": {
+          "min": 0.0,
+          "max": 20.0,
+          "num": 11
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "min": 0.2,
+          "max": 1.0,
+          "num": 21
+        },
+        "bild_rollback_threshold": {
+          "min": 0.0,
+          "max": 8.0,
+          "num": 5
+        }
+      },
+      {
+        "bild_fallback_threshold": {
+          "values": [
+            0.46,
+            0.5,
+            0.54,
+            0.58,
+            0.62,
+            0.66,
+            0.7,
+            0.74,
+            0.78,
+            0.82,
+            0.86,
+            0.9
+          ]
+        },
+        "bild_rollback_threshold": {
+          "min": 0.0,
+          "max": 8.0,
+          "num": 5
+        }
+      }
+    ],
+    "mars": {
+      "mars_theta": [
+        {
+          "min": 0.0,
+          "max": 0.8,
+          "num": 17
+        },
+        {
+          "min": 0.8,
+          "max": 0.9,
+          "num": 5
+        },
+        {
+          "min": 0.9,
+          "max": 1.0,
+          "num": 21
+        }
+      ]
+    },
+    "sc": {
+      "by": "sc_rule",
+      "cases": {
+        "chow": {
+          "sc_alpha": [
+            {
+              "min": 0.0,
+              "max": 0.1,
+              "num": 6
+            },
+            {
+              "min": 0.1,
+              "max": 0.3,
+              "num": 9
+            },
+            {
+              "min": 0.3,
+              "max": 0.4,
+              "num": 6
+            },
+            {
+              "min": 0.4,
+              "max": 0.6,
+              "num": 21
+            },
+            {
+              "min": 0.6,
+              "max": 0.7,
+              "num": 5
+            },
+            {
+              "min": 0.7,
+              "max": 1.0,
+              "num": 7
+            }
+          ]
+        },
+        "diff": {
+          "sc_alpha": [
+            {
+              "min": 0.0,
+              "max": 0.3,
+              "num": 16
+            },
+            {
+              "min": 0.3,
+              "max": 0.5,
+              "num": 9
+            },
+            {
+              "min": 0.5,
+              "max": 1.0,
+              "num": 11
+            }
+          ]
+        },
+        "opt": {
+          "sc_alpha": [
+            {
+              "min": 0.0,
+              "max": 0.1,
+              "num": 5
+            },
+            {
+              "min": 0.1,
+              "max": 0.2,
+              "num": 3
+            },
+            {
+              "min": 0.2,
+              "max": 0.5,
+              "num": 13
+            },
+            {
+              "min": 0.5,
+              "max": 1.0,
+              "num": 11
+            },
+            {
+              "min": 1.0,
+              "max": 1.5,
+              "num": 6
+            },
+            {
+              "min": 1.5,
+              "max": 2.0,
+              "num": 3
+            },
+            {
+              "min": 2.0,
+              "max": 3.0,
+              "num": 3
+            }
+          ]
+        }
+      }
+    },
+    "fly": {
+      "by": "fly_window_size",
+      "cases": {
+        "0": {
+          "fly_entropy_threshold": [
+            {
+              "min": 0.0,
+              "max": 0.08,
+              "num": 41
+            },
+            {
+              "min": 0.08,
+              "max": 0.1,
+              "num": 5
+            }
+          ]
+        },
+        "1": {
+          "fly_entropy_threshold": [
+            {
+              "min": 0.0,
+              "max": 0.08,
+              "num": 41
+            },
+            {
+              "min": 0.08,
+              "max": 0.1,
+              "num": 5
+            }
+          ]
+        },
+        "2": {
+          "fly_entropy_threshold": [
+            {
+              "min": 0.0,
+              "max": 0.02,
+              "num": 11
+            },
+            {
+              "min": 0.02,
+              "max": 0.1,
+              "num": 17
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "workspace": {
+    "user_tasks": [
+      "user_task_33", "user_task_25", "user_task_13", "user_task_23", "user_task_4",
+      "user_task_19", "user_task_36", "user_task_37", "user_task_38", "user_task_39"
+    ],
+    "injection_tasks": [
+      "injection_task_0", "injection_task_1", "injection_task_2", "injection_task_3",
+      "injection_task_4", "injection_task_5", "injection_task_6", "injection_task_7",
+      "injection_task_8", "injection_task_9", "injection_task_10", "injection_task_11",
+      "injection_task_12", "injection_task_13"
+    ]
+  }
+}
