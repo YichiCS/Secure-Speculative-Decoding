@@ -6,7 +6,7 @@
   <img src="assets/reproduced.png" alt="Results Reproduced" height="64">
 </p>
 
-<!-- TODO: [[ArXiv]](https://arxiv.org/abs/XXXX.XXXXX) -->
+[[ArXiv]](https://arxiv.org/abs/2610.08678)
 
 This is the official repository for **[IEEE S&P 2027] Secure Speculative Decoding for Large Language Models**. The paper shows that the relaxed verifiers used to speed up speculative decoding also weaken the safety alignment of the target model, and proposes **SecureSD** to restore it. 
 
