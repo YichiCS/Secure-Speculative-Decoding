@@ -37,7 +37,6 @@ def create_llm_kwargs(args, target_path, draft_path):
         eta_end=args.eta_end,
         eta_len=args.eta_len,
         eta_gamma=args.eta_gamma,
-        record_distribution_diagnostics=args.record_distribution_diagnostics,
     )
 
 

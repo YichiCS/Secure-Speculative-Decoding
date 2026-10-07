@@ -26,7 +26,6 @@ class Verifier(VerifierBase):
         eta_end: float,
         eta_len: float,
         eta_gamma: float,
-        record_distribution_diagnostics: bool,
         metrics: dict,
     ):
         super().__init__(lookahead, device)
@@ -38,7 +37,6 @@ class Verifier(VerifierBase):
         self.eta_end = eta_end
         self.eta_len = eta_len
         self.eta_gamma = eta_gamma
-        self.record_distribution_diagnostics = record_distribution_diagnostics
         self.metrics = metrics
 
         self._validate_config()
@@ -132,62 +130,6 @@ class Verifier(VerifierBase):
         logits_p = logits_flat.view(batch_size, self.lookahead + 1, -1)
         return logits_p, self.lookahead + 1
 
-    @staticmethod
-    def _next_token_tv(
-        logits_p: torch.Tensor,
-        logits_q: torch.Tensor,
-    ) -> torch.Tensor:
-        if logits_p.ndim != 3 or logits_q.ndim != 3:
-            raise ValueError("TV diagnostics require [batch, positions, vocab] logits")
-        if logits_p.shape[0] != logits_q.shape[0] or logits_p.shape[2] != logits_q.shape[2]:
-            raise ValueError("target/draft logits are not TV-compatible")
-        positions = min(logits_p.shape[1], logits_q.shape[1])
-        columns: list[torch.Tensor] = []
-        for index in range(positions):
-            p = torch.softmax(logits_p[:, index, :].to(torch.float32), dim=-1)
-            q = torch.softmax(logits_q[:, index, :].to(torch.float32), dim=-1)
-            columns.append(0.5 * p.sub(q).abs_().sum(dim=-1))
-        if not columns:
-            return torch.empty(logits_p.shape[0], 0, dtype=torch.float32)
-        return torch.stack(columns, dim=1).cpu()
-
-    def _record_tv_diagnostics(
-        self,
-        seqs: list[Sequence],
-        logits_p: torch.Tensor,
-        speculate_result: SpeculateResult,
-        new_suffixes: list[list[int]],
-        eta: torch.Tensor | None,
-    ) -> None:
-        K = min(logits_p.shape[1] - 1, speculate_result.logits_q.shape[1])
-        tv = self._next_token_tv(
-            logits_p[:, :K, :], speculate_result.logits_q[:, :K, :]
-        ).tolist()
-        eta_values = (
-            eta[:, :K].detach().to(device="cpu", dtype=torch.float32).tolist()
-            if eta is not None
-            else [[None] * K for _ in seqs]
-        )
-        rows = self.metrics["distribution_diagnostics"]
-        for batch_index, (seq, suffix) in enumerate(zip(seqs, new_suffixes)):
-            base = int(seq.num_accepted_completion_tokens)
-            accepted = min(max(len(suffix) - 1, 0), K)
-            for proposal_offset in range(K):
-                if proposal_offset < accepted:
-                    decision = "accepted"
-                elif proposal_offset == accepted and accepted < K:
-                    decision = "rejected"
-                else:
-                    decision = "discarded_after_reject"
-                rows.append({
-                    "seq_id": int(seq.seq_id),
-                    "position": base + proposal_offset + 1,
-                    "proposal_offset": proposal_offset,
-                    "tv_target_draft": float(tv[batch_index][proposal_offset]),
-                    "decision": decision,
-                    "eta": eta_values[batch_index][proposal_offset],
-                })
-
     def prefill(self, seqs: list[Sequence]) -> VerifyResult:
         self.target_model_runner.run(seqs, True)
         return VerifyResult([], [])
@@ -220,11 +162,6 @@ class Verifier(VerifierBase):
         )
         final_new_suffixes = result.new_suffixes
         final_recovery_tokens = result.recovery_tokens
-
-        if self.record_distribution_diagnostics:
-            self._record_tv_diagnostics(
-                seqs, logits_p, speculate_result, final_new_suffixes, eta
-            )
 
         self.metrics["target_verify_times"].append(perf_counter() - t0)
         self.metrics["accepted_suffix_lens_with_recovery"].extend(len(s) for s in final_new_suffixes)

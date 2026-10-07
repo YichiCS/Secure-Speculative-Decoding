@@ -28,9 +28,12 @@ dependencies = [
 
 [project.optional-dependencies]
 scripts = [
+    "accelerate",
     "datasets",
     "huggingface_hub",
     "human-eval",
+    "protobuf",
+    "sentencepiece",
 ]
 dev = [
     "pytest>=8",

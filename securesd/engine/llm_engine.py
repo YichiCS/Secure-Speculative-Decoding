@@ -32,7 +32,6 @@ def _new_metrics() -> dict:
         "per_seq_decode": [],
         "target_step_times": [],
         "target_verify_times": [],
-        "distribution_diagnostics": [],
     }
 
 
@@ -187,7 +186,6 @@ class LLMEngine:
             eta_end=config.eta_end,
             eta_len=config.eta_len,
             eta_gamma=config.eta_gamma,
-            record_distribution_diagnostics=config.record_distribution_diagnostics,
             metrics=self.metrics,
         )
         return SpecDecodeStep(scheduler=self.scheduler, speculator=speculator, verifier=verifier)

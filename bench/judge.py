@@ -23,7 +23,7 @@ LOCAL_ONLY = {"humaneval", "gsm8k"}
 
 class _Args:
 
-    def __init__(self, meta: dict, overrides: dict):
+    def __init__(self, overrides: dict):
         self.hf_root = overrides.get("hf_root")
         self.utility_timeout = overrides.get("utility_timeout", 3.0)
         self.utility_workers = overrides.get("utility_workers", 16)
@@ -32,7 +32,6 @@ class _Args:
             "pi_judge_model", "meta-llama/Llama-3.2-3B-Instruct"
         )
         self.pi_judge_batch_size = overrides.get("pi_judge_batch_size", 16)
-        self.pi_attack_mode = meta.get("dataset_meta", {}).get("attack_mode", "standard")
 
 
 def _write_atomic(path: Path, payload: dict) -> None:
@@ -76,7 +75,7 @@ def score_one(report_path: Path, raw_path: Path, overrides: dict) -> str:
         meta=bundle_data.get("meta", {}),
     )
     adapter = get_dataset_adapter(dataset)
-    args = _Args(report.get("meta", {}), overrides)
+    args = _Args(overrides)
 
     util = adapter.evaluate(raw["outputs"], bundle, args)
     summary = {

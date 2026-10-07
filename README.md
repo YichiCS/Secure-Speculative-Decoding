@@ -28,7 +28,6 @@ scripts/
   sweep.sh                    runs that job list across a pool of GPUs, resuming
   judge_pool.sh               scores several result trees across a pool of GPUs
   qwen/ llama/                sweep configs, one per model pair and benchmark
-  agentdojo/                  AgentDojo v1.2.2 harness (its own environment)
 
 .data/                      the two security prompt sets, 200 samples each
 .results/                   written by the runs; empty in a fresh clone
@@ -288,9 +287,7 @@ This code runs jailbreak and prompt-injection attacks against locally hosted
 LLMs, which is the subject of the research: every run on the jailbreak or
 prompt-injection benchmark makes a local model produce harmful text, which is
 written under `.results/`. Nothing is sent anywhere and no external service is
-called. The AgentDojo harness executes its tool calls inside AgentDojo's own
-sandboxed mock environment and never touches real accounts, files or networks.
-No human-subjects data, personal data or credentials are involved.
+called. No human-subjects data, personal data or credentials are involved.
 
 HumanEval and GSM8K exercise the same pipeline without generating harmful
 content.
