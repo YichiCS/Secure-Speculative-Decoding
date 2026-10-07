@@ -45,11 +45,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--eta_end", type=float, default=1.0)
     parser.add_argument("--eta_len", type=float, default=2.0)
     parser.add_argument("--eta_gamma", type=float, default=1.0)
-    parser.add_argument(
-        "--record_distribution_diagnostics",
-        action="store_true",
-        help="Record exact target/draft next-token TV diagnostics (research only).",
-    )
 
     parser.add_argument("--num_seqs", type=int, default=200)
     parser.add_argument("--dataset", type=str, choices=DATASET_CHOICES, default="humaneval")
@@ -64,18 +59,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--pi_file", type=str, default=None)
     parser.add_argument("--pi_judge_model", type=str, default="meta-llama/Llama-3.2-3B-Instruct")
     parser.add_argument("--pi_judge_batch_size", type=int, default=16)
-    parser.add_argument(
-        "--pi_attack_mode",
-        choices=["standard", "adaptive_delayed"],
-        default="standard",
-        help="Prompt-injection construction; adaptive_delayed places the injected pivot after a benign answer.",
-    )
-    parser.add_argument(
-        "--pi_adaptive_window_threshold",
-        type=int,
-        default=9,
-        help="For delayed PI, eta step threshold L; positions t < L are inside the correction window.",
-    )
 
     parser.add_argument("--temp", type=float, default=0.0)
     parser.add_argument("--dtemp", type=float, default=0.0)

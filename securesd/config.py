@@ -39,8 +39,6 @@ class Config:
     eta_len: float = 2.0
     eta_gamma: float = 1.0
 
-    record_distribution_diagnostics: bool = False
-
     speculate: bool = False
     hf_config: AutoConfig | None = None
     draft_hf_config: AutoConfig | None = None

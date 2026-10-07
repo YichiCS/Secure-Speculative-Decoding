@@ -176,10 +176,6 @@ class PromptInjectionAdapter:
             num_seqs=int(args.num_seqs),
             prompt_offset=int(getattr(args, "prompt_offset", 0)),
             pi_file=getattr(args, "pi_file", None),
-            attack_mode=str(getattr(args, "pi_attack_mode", "standard")),
-            adaptive_window_threshold=int(
-                getattr(args, "pi_adaptive_window_threshold", 9)
-            ),
         )
 
     def evaluate(self, outputs: list[dict], bundle: DatasetBundle, args) -> dict:
